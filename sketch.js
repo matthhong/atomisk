@@ -3,11 +3,12 @@
   Draw a 1024 particles system that represents bins of the FFT frequency spectrum. 
  */
 
+var img
 var mic, soundFile; // input sources, press T to toggleInput()
 
 var fft;
 var smoothing = 0.8; // play with this, between 0 and .99
-var binCount = 1024; // size of resulting FFT array. Must be a power of 2 between 16 and 1024
+var binCount = 512; // size of resulting FFT array. Must be a power of 2 between 16 and 1024
 var particles =  new Array(binCount);
 var volume = 0.01; // initial starting volume of amplitude (necessary for p5.sound)
 var amplitude;
@@ -21,6 +22,8 @@ function setup() {
   c = createCanvas(windowWidth, windowHeight);
   noStroke();
   // colorMode(HSB, 360, 100, 100, 100);
+
+  img = loadImage("images/bubble-green.png")
 
   soundFile.play();
   mic = new p5.AudioIn();
@@ -69,6 +72,7 @@ function draw() {
     // update x position (in case we change the bin count)
     particles[i].position.x = map(i, 0, binCount, 0, width * 2);
   }
+
 }
 
 // ===============
@@ -101,9 +105,10 @@ Particle.prototype.update = function(someLevel) {
   //var bri = map(this.radius, 0, width/1.2, 80, 100);
   var alp = map(volume, 0, 0.5, 60, 100);
 
-  fill(hue,sat,bri,alp);
+  image(img, this.position.x, this.position.y, this.diameter, this.diameter)
+  // fill(hue,sat,bri,alp);
 
-  ellipse(this.position.x, this.position.y, this.diameter, this.diameter);
+  // ellipse(this.position.x, this.position.y, this.diameter, this.diameter);
 
 }
 
@@ -137,3 +142,7 @@ function toggleInput() {
     fft.setInput(soundFile);
   }
 }
+
+window.onload=function(){
+  $('body').hide(1).show(1);
+};
