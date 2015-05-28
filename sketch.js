@@ -43,6 +43,8 @@ function setup() {
     );
     particles[i] = new Particle(position);
   }
+  $('.album-art-wrapper').show();
+  $('body').hide(1).show(1);
 }
 
 function draw() {
@@ -142,7 +144,3 @@ function toggleInput() {
     fft.setInput(soundFile);
   }
 }
-
-window.onload=function(){
-  $('body').hide(1).show(1);
-};

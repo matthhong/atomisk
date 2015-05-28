@@ -2,13 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
+    <script language="javascript" type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
     <script language="javascript" type="text/javascript" src="p5.js"></script>
 
     <script language="javascript" type="text/javascript" src="p5.sound.js"></script> 
 
     <script language="javascript" type="text/javascript" src="sketch.js"></script> 
 
-    <script language="javascript" type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+    <script type="text/javascript" src="script.js"></script>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="animate.css">
 
     <style> 
     body {
@@ -35,26 +39,47 @@
 	  background: -o-linear-gradient(left, #000, #214926, #000);
 	}
 	.album-art-wrapper {
+		display: none;
 		position: absolute;
 		bottom:412px;
-		right:212px;
+		left: 50%;
+		margin-left:-100px;
 	}
-	.album-art img{
+	.album-art .links a{
+		position: absolute;
+		z-index: 1;
+		left:69px;
+		top:36px;
+	}
+	.fa-download {
+		width:40px;
+		color: #71b747;
+	}
+	#bandcamp img{
+		width:80px;
+		margin-left:-10px;
+	}
+	.bottle {
+		width: 200px;
+		z-index:2;
 		position: absolute;
 	}
 	.album-art:hover {
-		-webkit-transform: translateX(-96px) translateY(24px) rotate(-15deg);
-		   -moz-transform: translateX(-96px) translateY(24px) rotate(-15deg);
-		    -ms-transform: translateX(-96px) translateY(24px) rotate(-15deg);
-		     -o-transform: translateX(-96px) translateY(24px) rotate(-15deg);
-		        transform: translateX(-96px) translateY(24px) rotate(-15deg);
+		cursor: pointer;
 	}
+
     </style>
 <body>
 	<div class="album-art-wrapper">
 		<div class="album-art">
-			<img src="images/cap.png" style="width:200px;">
-			<img src="images/bottle.png" style="width:200px;">
+			<div class="bottle-wrapper">
+				<img src="images/cap.png" class="bottle cap">
+				<img src="images/bottle.png" class="bottle">
+			</div>
+			<div class="links">
+				<a href="http://bandcamp.com" id='bandcamp'><img src="images/bclogo.png"></a>
+				<a href="#" id='album'><i class="fa fa-download fa-4x"></i></a>
+			</div>
 		</div>
 	</div>
 </body>
