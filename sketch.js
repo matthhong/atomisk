@@ -23,9 +23,9 @@ function setup() {
   noStroke();
   // colorMode(HSB, 360, 100, 100, 100);
 
-  img = loadImage("images/bubble-green.png")
+  img = loadImage("images/bubble-dark.png")
 
-  soundFile.play();
+  soundFile.pause();
   mic = new p5.AudioIn();
 
   // initialize the FFT, plug in our variables for smoothing and binCount
@@ -43,7 +43,6 @@ function setup() {
     );
     particles[i] = new Particle(position);
   }
-  $('.album-art-wrapper').show();
   $('body').hide(1).show(1);
 }
 
@@ -134,13 +133,13 @@ function keyPressed() {
 function toggleInput() {
   if (soundFile.isPlaying() ) {
     soundFile.pause();
-    mic.start();
-    amplitude.setInput(mic);
-    fft.setInput(mic);
+    // mic.start();
+    // amplitude.setInput(mic);
+    // fft.setInput(mic);
   } else {
     soundFile.play();
-    mic.stop();
-    amplitude.setInput(soundFile);
-    fft.setInput(soundFile);
+    // mic.stop();
+    // amplitude.setInput(soundFile);
+    // fft.setInput(soundFile);
   }
 }
