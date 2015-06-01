@@ -54,10 +54,6 @@
 		left:69px;
 		top:36px;
 	}
-	.fa-download {
-		width:40px;
-		color: #71b747;
-	}
 	#bandcamp img{
 		width:80px;
 		margin-left:-10px;
@@ -106,7 +102,7 @@
     <style type="text/css">
 		h1 {
 			color:#d8b036;
-			font-size:20px;
+			font-size:22px;
 			line-height:1.25em;
 			margin:0;
 			font-weight:300;
@@ -127,20 +123,20 @@
 		h1 img {position:absolute;left:-66px;top:-1px;width:56px;height:56px;}
 
 		#center {position:absolute;left:50%;margin-left:-500px;top:0;width:1000px;height:100%;background-image:url(assets/images/center.jpg);background-size:cover;z-index:1000;}
-		#download {position:absolute;top:50%;margin-top:-40px;left:110px;width:290px;z-index:1200;text-align:right;}
+		#download {position:absolute;top:50%;margin-top:-40px;left:50px;width:320px;z-index:1200;text-align:right;}
 
-		#bandcamp {position:absolute;top:50%;margin-top:-40px;left:605px;width:285px;z-index:1200;}
+		#bandcamp {position:absolute;top:50%;margin-top:-40px;left:632px;width:290px;z-index:1200;}
 		#bottle-wrapper {
 			position:absolute;
 			left:50%;
 			top:50%;
-			margin-top:-100px;
-			margin-left:-50px;
+			margin-top:-120px;
+			margin-left:-60px;
 			height:300px;
 		}
 		#bottle-wrapper img {
-			height:200px;
-			width:100px;
+			height:240px;
+			width:120px;
 		}
 
 		div.mobileonly {display:none;}
@@ -164,29 +160,41 @@
 			#download {margin-top:42px;}
 			#slash {left:0;top:0;margin-top:0;margin-left:0;height:100%;-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);overflow:hidden;}
 		}
+
+		.pause {display:none;}
+
+		.fa-arrow-right {
+			font-size: 12px;
+			line-height: inherit;
+			vertical-align: bottom;
+		}
+		.fa-download {
+			font-size: 12px;
+			line-height: inherit;
+		}
 	</style>
 <body>
 	<div id="center">
 		<div id="download">
 			<h1>A True Story That Seems Like a Lie</h1>
-			<a href="#">
+			<a href="/music/Atomisk - A True Story that Seems Like a Lie.zip" download>
 				<p>
-					Download the album
+					<i class="fa fa-download"></i> Download the album
 				</p>
 			</a>
 		</div>
 			<div id="bottle-wrapper" onclick="toggleInput()">
 				<img src="images/cap-2.png" class="bottle cap">
 				<img src="images/play-2.png" class="bottle play">
-				<img src="images/pause-2.png" class="bottle pause" style="display: none;">
+				<img src="images/pause-2.png" class="bottle pause">
 				<img src="images/loading.png" alt="" class="bottle loading">
 			</div>
 		<div id="bandcamp">
 			<h1>A new album 
 By Atomisk</h1>
-			<a href="#">
+			<a href="https://atomisk.bandcamp.com/" target="_blank">
 				<p>
-					Visit Bandcamp
+					Visit Bandcamp <i class="fa fa-arrow-right"></i>
 				</p>
 			</a>
 		</div>
