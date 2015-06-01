@@ -44,6 +44,7 @@ function setup() {
     particles[i] = new Particle(position);
   }
   $('body').hide(1).show(1);
+  $('.loading').hide();
 }
 
 function draw() {
