@@ -3,7 +3,7 @@
   Draw a 1024 particles system that represents bins of the FFT frequency spectrum. 
  */
 var Safari = /^((?!chrome).)*safari/i.test(navigator.userAgent);
-var CriOS = navigator.userAgent.match('CriOS')
+var CriOS = navigator.userAgent.match('CriOS');
 var Chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
 var Opera = (navigator.userAgent.match(/Opera|OPR\//) ? true : false)
 var Firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
