@@ -20,9 +20,12 @@ var amplitude;
 
 // preload ensures that the sound is loaded and ready to play in time for setup
 function preload() {
-  if (((Chrome || (CriOS && Safari)) && !Opera) || Firefox) {
+  if (((Chrome || CriOS) && !Safari && !Opera)) {
+    soundFile = loadSound('music/Atomisk - A True Story that Seems Like a Lie - 06 A True Story that Seems Like a Lie.mp3');
+  } else if (Firefox) {
     soundFile = loadSound('music/music.ogg');
-  } else {
+  }
+    else {
     $('.bottle').hide();
     $('.nolabel').show();
   }
