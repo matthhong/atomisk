@@ -187,7 +187,9 @@
 			#slash {left:0;top:0;margin-top:0;margin-left:0;height:100%;-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);overflow:hidden;}
 		}
 
-		.pause {display:none;}
+		.pause, .nolabel {display:none;}
+
+		p.nolabel {margin-left:170px;}
 
 		.fa-arrow-right {
 			font-size: 12px;
@@ -209,11 +211,13 @@
 				</p>
 			</a>
 		</div>
+			<p class="nolabel">This web player is not compatible with IE, Opera, or Safari.</p>
 			<div id="bottle-wrapper" onclick="toggleInput()">
 				<img src="images/cap-2.png" class="bottle cap">
 				<img src="images/play-3.png" class="bottle play">
 				<img src="images/pause-3.png" class="bottle pause">
 				<img src="images/loading.png" alt="" class="bottle loading">
+				<img src="images/mickeys-nolabel.png" alt="" class="bottle nolabel">
 			</div>
 		<div id="bandcamp">
 			<h1>A new album 

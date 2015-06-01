@@ -2,6 +2,10 @@
   Analyze the frequency spectrum with FFT (Fast Fourier Transform)
   Draw a 1024 particles system that represents bins of the FFT frequency spectrum. 
  */
+var Safari = /^((?!chrome).)*safari/i.test(navigator.userAgent);
+var Chrome = navigator.userAgent.match('CriOS') || (navigator.userAgent.toLowerCase().indexOf('chrome') > -1);
+var Opera = (navigator.userAgent.match(/Opera|OPR\//) ? true : false)
+var Firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
 var img
 var mic, soundFile; // input sources, press T to toggleInput()
@@ -15,7 +19,12 @@ var amplitude;
 
 // preload ensures that the sound is loaded and ready to play in time for setup
 function preload() {
-  soundFile = loadSound('music/Atomisk - A True Story that Seems Like a Lie - 06 A True Story that Seems Like a Lie.mp3')
+  if ((Chrome && !Safari && !Opera) || Firefox) {
+    soundFile = loadSound('music/Atomisk - A True Story that Seems Like a Lie - 06 A True Story that Seems Like a Lie.mp3');
+  } else {
+    $('.bottle').hide();
+    $('.nolabel').show();
+  }
 }
 
 function setup() {
