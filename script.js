@@ -18,7 +18,7 @@ $(function(){
 		if (soundFile.isPlaying()){
 			$('.pause').show();
 			$('.play').hide();
-			$('.cap').animate({'top':'-15px'}, 100);
+			$('.cap').animate({'top':'-18px'}, 100);
 		} else {
 			$('.pause').hide();
 			$('.play').show();
