@@ -16,8 +16,10 @@ $(function(){
 			// 	$('#album').css({'z-index':3})
 			// });
 		if (soundFile.isPlaying()){
-			$('.cap').animate({'top':'-10px'}, 100);
+			$('.pause').show();
+			$('.cap').animate({'top':'-15px'}, 100);
 		} else {
+			$('.pause').hide();
 			$('.cap').animate({'top':'0px'}, 100);
 		}
 		});

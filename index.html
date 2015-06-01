@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <script language="javascript" type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+    <script language="javascript" type="text/javascript" src="jquery-1.11.0.min.js"></script> 
     <script language="javascript" type="text/javascript" src="p5.js"></script>
 
     <script language="javascript" type="text/javascript" src="p5.sound.js"></script> 
@@ -80,6 +80,13 @@
 	p {
 		font-family: Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif;
 		color: #fff;
+		line-height:1.25em;
+		font-size: 14px;
+		margin:0;
+		font-weight:300;
+					text-transform:uppercase;
+
+		letter-spacing:0.25em;
 	}
 	#main {
 		position: absolute;
@@ -98,11 +105,11 @@
     <style type="text/css">
 		h1 {
 			color:#d8b036;
-			font-size:15px;
+			font-size:20px;
 			line-height:1.25em;
 			margin:0;
 			font-weight:300;
-			letter-spacing:0.5em;
+			letter-spacing:0.25em;
 			text-transform:uppercase;
 		}
 		#bandcamp h1 {
@@ -111,27 +118,28 @@
 		img {border:0;}
 		a {color:#ffcb05;text-decoration:none;}
 		a:hover {color:#fff;}
-		p {margin:0 0 1.5em 0;padding:0.5em 0.5em 0 0;}
+		p {margin:0 0 1.5em 0;padding:0.5em 0 0 0;}
 		p.big {margin-bottom:3em;line-height:24px;}
 
 		img.strip {height:100%;width:auto;position:absolute;top:0;z-index:10;}
 
 		h1 img {position:absolute;left:-66px;top:-1px;width:56px;height:56px;}
 
-		#center {position:absolute;left:50%;margin-left:-165px;top:0;width:380px;height:100%;background-image:url(assets/images/center.jpg);background-size:cover;z-index:1000;}
-		#download {position:absolute;top:50%;margin-top:-40px;left:-200px;width:290px;z-index:1200;text-align:right;}
-		#bandcamp {position:absolute;top:50%;margin-top:-40px;left:295px;width:285px;z-index:1200;}
+		#center {position:absolute;left:50%;margin-left:-500px;top:0;width:1000px;height:100%;background-image:url(assets/images/center.jpg);background-size:cover;z-index:1000;}
+		#download {position:absolute;top:50%;margin-top:-40px;left:110px;width:290px;z-index:1200;text-align:right;}
+
+		#bandcamp {position:absolute;top:50%;margin-top:-40px;left:605px;width:285px;z-index:1200;}
 		#bottle-wrapper {
 			position:absolute;
 			left:50%;
 			top:50%;
-			margin-top:-75px;
-			margin-left:-38px;
+			margin-top:-100px;
+			margin-left:-50px;
 			height:300px;
 		}
 		#bottle-wrapper img {
-			height:150px;
-			width:75px;
+			height:200px;
+			width:100px;
 		}
 
 		div.mobileonly {display:none;}
@@ -160,20 +168,25 @@
 	<div id="center">
 		<div id="download">
 			<h1>A True Story That Seems Like a Lie</h1>
-			<p>
-				Download the album
-			</p>
+			<a href="#">
+				<p>
+					Download the album
+				</p>
+			</a>
 		</div>
 			<div id="bottle-wrapper" onclick="toggleInput()">
 				<img src="images/cap.png" class="bottle cap">
-				<img src="images/bottle.png" class="bottle">
+				<img src="images/play.png" class="bottle play">
+				<img src="images/pause.png" class="bottle pause" style="display: none;">
 			</div>
 		<div id="bandcamp">
 			<h1>A new album 
 By Atomisk</h1>
-			<p>
-				Visit Bandcamp
-			</p>
+			<a href="#">
+				<p>
+					Visit Bandcamp
+				</p>
+			</a>
 		</div>
 	</div>
 <!-- 	<div id="main">
