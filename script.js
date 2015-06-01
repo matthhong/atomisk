@@ -17,9 +17,11 @@ $(function(){
 			// });
 		if (soundFile.isPlaying()){
 			$('.pause').show();
+			$('.play').hide();
 			$('.cap').animate({'top':'-15px'}, 100);
 		} else {
 			$('.pause').hide();
+			$('.play').show();
 			$('.cap').animate({'top':'0px'}, 100);
 		}
 		});
