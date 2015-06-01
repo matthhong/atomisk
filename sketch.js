@@ -5,10 +5,10 @@
 var Safari = /^((?!chrome).)*safari/i.test(navigator.userAgent);
 var CriOS = navigator.userAgent.match('CriOS');
 var Chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
-var Opera = (navigator.userAgent.match(/Opera|OPR\//) ? true : false)
+var Opera = (navigator.userAgent.match(/Opera|OPR\//) ? true : false);
 var Firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
-var img
+var img;
 var mic, soundFile; // input sources, press T to toggleInput()
 
 var fft;
@@ -36,7 +36,7 @@ function setup() {
   noStroke();
   // colorMode(HSB, 360, 100, 100, 100);
 
-  img = loadImage("images/bubble-dark.png")
+  img = loadImage("images/bubble-dark.png");
 
   soundFile.pause();
   mic = new p5.AudioIn();
@@ -104,7 +104,7 @@ var theyExpand = 1+(2*volume);
 
 // use FFT bin level to change speed and diameter
 Particle.prototype.update = function(someLevel) {
-  this.position.y -= this.speed.y / (someLevel*1.2)
+  this.position.y -= this.speed.y / (someLevel*1.2);
 
   if (this.position.y < 0) {
     this.position.y = height;
@@ -120,7 +120,7 @@ Particle.prototype.update = function(someLevel) {
   //var bri = map(this.radius, 0, width/1.2, 80, 100);
   var alp = map(volume, 0, 0.5, 60, 100);
 
-  image(img, this.position.x, this.position.y, this.diameter, this.diameter)
+  image(img, this.position.x, this.position.y, this.diameter, this.diameter);
   // fill(hue,sat,bri,alp);
 
   // ellipse(this.position.x, this.position.y, this.diameter, this.diameter);
