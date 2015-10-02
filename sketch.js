@@ -62,32 +62,33 @@ function setup() {
 
 function draw() {
 
-    // returns an array with [binCount] amplitude readings from lowest to highest frequencies
-  var spectrum = fft.analyze(binCount);
+  if (soundFile.isLoaded()){
+      // returns an array with [binCount] amplitude readings from lowest to highest frequencies
+    var spectrum = fft.analyze(binCount);
 
-  // analyze the volume
-  volume = amplitude.getLevel();
+    // analyze the volume
+    volume = amplitude.getLevel();
 
-  // var hue = map(volume, 0, 0.5, 176, 288);
-  // var sat = map(volume, 0, 0.5, 80, 100);
-  // var bri = map(volume, 0, 0.5, 80, 100);
-  // var alp = map(windowHeight, 0, 0.5, 60, 100);
+    // var hue = map(volume, 0, 0.5, 176, 288);
+    // var sat = map(volume, 0, 0.5, 80, 100);
+    // var bri = map(volume, 0, 0.5, 80, 100);
+    // var alp = map(windowHeight, 0, 0.5, 60, 100);
 
-  // background('#2E7A18');
-  clear();
+    // background('#2E7A18');
+    clear();
 
-  // update and draw all [binCount] particles!
-  // Each particle gets a level that corresponds to
-  // the level at one bin of the FFT spectrum. 
-  // This level is like amplitude, often called "energy."
-  // It will be a number between 0-255.
-  for (var i = 0; i < binCount; i++) {
-    var thisLevel = map(spectrum[i], 0, 64, 0, 1);
-    particles[i].update( thisLevel );
-    // update x position (in case we change the bin count)
-    particles[i].position.x = map(i, 0, binCount, 0, width * 2);
+    // update and draw all [binCount] particles!
+    // Each particle gets a level that corresponds to
+    // the level at one bin of the FFT spectrum. 
+    // This level is like amplitude, often called "energy."
+    // It will be a number between 0-255.
+    for (var i = 0; i < binCount; i++) {
+      var thisLevel = map(spectrum[i], 0, 64, 0, 1);
+      particles[i].update( thisLevel );
+      // update x position (in case we change the bin count)
+      particles[i].position.x = map(i, 0, binCount, 0, width * 2);
+    }
   }
-
 }
 
 // ===============
